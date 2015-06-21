@@ -1,0 +1,26 @@
+name = Hosting Test
+description = Installation profile for testing Slovak and Czech hostings.
+core = 7.x
+exclusive = TRUE
+
+; Core modules
+
+dependencies[] = block
+dependencies[] = comment
+dependencies[] = contextual
+dependencies[] = image
+dependencies[] = menu
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = taxonomy
+dependencies[] = dblog
+dependencies[] = search
+dependencies[] = shortcut
+dependencies[] = field_ui
+dependencies[] = file
+dependencies[] = forum
+dependencies[] = rdf
+
+files[] = hosting_test.profile
+files[] = hosting_test.install
