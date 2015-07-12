@@ -25,6 +25,7 @@ dependencies[] = rdf
 ; Contribs
 dependencies[] = ctools
 dependencies[] = ds
+dependencies[] = entity
 dependencies[] = entityreference
 dependencies[] = features
 dependencies[] = paragraphs
