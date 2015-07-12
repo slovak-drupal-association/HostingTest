@@ -22,5 +22,16 @@ dependencies[] = file
 dependencies[] = forum
 dependencies[] = rdf
 
+; Contribs
+dependencies[] = ctools
+dependencies[] = ds
+dependencies[] = entityreference
+dependencies[] = features
+dependencies[] = paragraphs
+dependencies[] = text
+
+; Features
+dependencies[] = ct_article
+
 files[] = hosting_test.profile
 files[] = hosting_test.install
