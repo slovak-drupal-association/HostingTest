@@ -22,5 +22,9 @@ dependencies[] = file
 dependencies[] = forum
 dependencies[] = rdf
 
+; Contribs
+dependencies[] = admin_menu
+dependencies[] = admin_menu_toolbar
+
 files[] = hosting_test.profile
 files[] = hosting_test.install
