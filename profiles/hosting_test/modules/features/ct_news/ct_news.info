@@ -1,0 +1,17 @@
+name = CT: News
+core = 7.x
+package = Features
+version = 7.x-1.0
+project = ct_news
+dependencies[] = entityreference
+dependencies[] = features
+dependencies[] = field_base
+dependencies[] = image
+dependencies[] = text
+features[features_api][] = api:2
+features[field_base][] = body
+features[field_instance][] = node-news-body
+features[field_instance][] = node-news-field_category
+features[field_instance][] = node-news-field_image
+features[node][] = news
+project path = profiles/hosting_test/modules/features
