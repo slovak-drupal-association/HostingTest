@@ -30,6 +30,8 @@ dependencies[] = entityreference
 dependencies[] = features
 dependencies[] = paragraphs
 dependencies[] = text
+dependencies[] = admin_menu
+dependencies[] = admin_menu_toolbar
 
 ; Features
 dependencies[] = ct_article
