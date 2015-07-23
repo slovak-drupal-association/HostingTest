@@ -104,9 +104,10 @@ function hosting_test_set_and_enable_themes(&$form, $form_state) {
   // Any themes without keys here will get numeric keys and so will be enabled,
   // but not placed into variables.
   $enable = array(
-    'theme_default' => 'site',
-    'admin_theme' => 'site_admin',
-    'adminimal',
+    'theme_default' => 'hosting_theme',
+    'admin_theme' => 'seven',
+    'zurb_foundation',
+    'hosting_theme',
   );
 
   theme_enable($enable);
