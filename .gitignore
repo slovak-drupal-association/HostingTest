@@ -1,6 +1,9 @@
 # Ignore configuration files that may contain sensitive information.
 sites/*/*settings*.php
 
+# Ignoring local DevDesktop settings.
+sites/*.dd
+
 # Ignore paths that contain generated content.
 files/
 sites/*/files
@@ -18,3 +21,6 @@ robots.txt
 sites/all/README.txt
 sites/all/modules/README.txt
 sites/all/themes/README.txt
+
+# Ignoring IDE settings.
+.idea
