@@ -1,0 +1,13 @@
+name = Homepage
+description = Handling homepage settings.
+core = 7.x
+package = EPIC: Content
+version = 7.x-1.0
+project = homepage
+dependencies[] = ctools
+dependencies[] = strongarm
+dependencies[] = view_latest_news
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[variable][] = site_frontpage
+project path = profiles/hosting_test/modules/features/epic-homepage
