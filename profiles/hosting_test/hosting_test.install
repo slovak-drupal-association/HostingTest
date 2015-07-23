@@ -104,9 +104,10 @@ function hosting_test_set_and_enable_themes(&$form, $form_state) {
   // Any themes without keys here will get numeric keys and so will be enabled,
   // but not placed into variables.
   $enable = array(
-    'theme_default' => 'site',
-    'admin_theme' => 'site_admin',
-    'adminimal',
+    'zurb_foundation',
+    'hosting_theme',
+    'theme_default' => 'hosting_theme',
+    'admin_theme' => 'seven',
   );
 
   theme_enable($enable);
@@ -163,10 +164,6 @@ function hosting_test_finished(&$install_state) {
   drupal_cron_run();
 
   variable_set('install_task', 'done');
-  
-  theme_enable(array('bartik','seven'));
-  
-  variable_set('theme_default', 'bartik');
   
   // Enable the admin theme.
   variable_set('admin_theme', 'seven');

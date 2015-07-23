@@ -39,6 +39,7 @@ dependencies[] = ct_news
 dependencies[] = ct_article
 dependencies[] = ct_event
 dependencies[] = view_latest_news
+dependencies[] = view_slider
 dependencies[] = homepage
 
 files[] = hosting_test.profile
