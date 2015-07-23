@@ -1,5 +1,7 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the VIEW: Latest News feature.
  */
+
+include_once 'view_latest_news.features.inc';
