@@ -22,4 +22,4 @@ features[user_permission][] = delete own news content
 features[user_permission][] = edit any news content
 features[user_permission][] = edit own news content
 features_exclude[field_base][body] = body
-project path = profiles/hosting_test/modules/features
+project path = profiles/hosting_test/modules/features/epic-news
