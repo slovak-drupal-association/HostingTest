@@ -38,6 +38,7 @@ dependencies[] = field_base
 dependencies[] = ct_news
 dependencies[] = ct_article
 dependencies[] = ct_event
+dependencies[] = view_latest_news
 
 files[] = hosting_test.profile
 files[] = hosting_test.install
