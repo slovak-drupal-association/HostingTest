@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the VIEW: Event page feature.
+ */
+
+include_once 'view_event_page.features.inc';
