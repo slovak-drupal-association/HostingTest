@@ -1,7 +1,8 @@
 name = CT: Event
+description = Event content type and related settings.
 core = 7.x
-package = Features
-version = 7.x-1.1
+package = EPIC: Events
+version = 7.x-1.2
 project = ct_event
 dependencies[] = addressfield
 dependencies[] = content_access
@@ -24,3 +25,4 @@ features[user_permission][] = delete own event content
 features[user_permission][] = edit any event content
 features[user_permission][] = edit own event content
 features[variable][] = content_access_event
+project path = profiles/hosting_test/modules/features/epic-events
