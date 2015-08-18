@@ -32,6 +32,12 @@ function view_slider_context_default_contexts() {
           'region' => 'content',
           'weight' => '-10',
         ),
+        'views-latest_forum_comments-block' => array(
+          'module' => 'views',
+          'delta' => 'latest_forum_comments-block',
+          'region' => 'triptych_middle',
+          'weight' => '-10',
+        ),
       ),
     ),
   );

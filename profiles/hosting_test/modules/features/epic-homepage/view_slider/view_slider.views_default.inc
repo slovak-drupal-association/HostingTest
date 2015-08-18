@@ -64,17 +64,6 @@ function view_slider_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
-  $translatables['slider'] = array(
-    t('Master'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('<div style="height:500px; background-color:lightgrey; color: white;">[title]</div>'),
-    t('Block'),
-  );
   $export['slider'] = $view;
 
   return $export;
