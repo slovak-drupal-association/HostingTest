@@ -4,7 +4,6 @@ core = 7.x
 exclusive = TRUE
 
 ; Core modules
-
 dependencies[] = block
 dependencies[] = comment
 dependencies[] = contextual
@@ -42,6 +41,7 @@ dependencies[] = view_latest_news
 dependencies[] = view_slider
 dependencies[] = homepage
 dependencies[] = view_event_page
+dependencies[] = view_latest_forum_comments
 
 files[] = hosting_test.profile
 files[] = hosting_test.install
