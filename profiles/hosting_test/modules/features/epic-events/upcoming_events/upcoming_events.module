@@ -1,5 +1,7 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the Upcoming Events feature.
  */
+
+include_once 'upcoming_events.features.inc';
