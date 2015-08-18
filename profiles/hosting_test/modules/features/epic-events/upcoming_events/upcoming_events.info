@@ -1,0 +1,9 @@
+name = Upcoming Events
+description = Displays nearest upcoming events.
+core = 7.x
+package = EPIC: Events
+version = 7.x-1.0
+project = upcoming_events
+dependencies[] = ct_event
+features[features_api][] = api:2
+project path = profiles/hosting_test/modules/features/epic-events
