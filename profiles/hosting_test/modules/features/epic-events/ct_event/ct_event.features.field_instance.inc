@@ -54,7 +54,7 @@ function ct_event_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_coordinates'
+// Exported field_instance: 'node-event-field_coordinates'
   $field_instances['node-event-field_coordinates'] = array(
     'bundle' => 'event',
     'deleted' => 0,
@@ -104,6 +104,114 @@ function ct_event_field_default_field_instances() {
         ),
       ),
       'type' => 'geocoder',
+      'weight' => 35,
+    ),
+  );
+
+// Exported field_instance: 'node-event-field_date'
+  $field_instances['node-event-field_date'] = array(
+    'bundle' => 'event',
+    'deleted' => 0,
+    'description' => 'Date when an event takes place.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_date',
+    'label' => 'Date',
+    'required' => 1,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 10,
+        'input_format' => 'm/d/Y - H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_select',
+      'weight' => 35,
+    ),
+  );
+
+
+
+  // Exported field_instance: 'node-event-field_date'
+  $field_instances['node-event-field_date'] = array(
+    'bundle' => 'event',
+    'deleted' => 0,
+    'description' => 'Date when an event takes place.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_date',
+    'label' => 'Date',
+    'required' => 1,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 10,
+        'input_format' => 'm/d/Y - H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_select',
       'weight' => 35,
     ),
   );
@@ -216,6 +324,8 @@ function ct_event_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
+  t('Date');
+  t('Date when an event takes place.');
   t('Coordinates');
   t('Image');
   t('Location');
