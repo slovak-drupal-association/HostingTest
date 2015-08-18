@@ -1,4 +1,4 @@
-name = Upcoming Events
+name = VIEW: Upcoming Events
 description = Displays nearest upcoming events.
 core = 7.x
 package = EPIC: Events
