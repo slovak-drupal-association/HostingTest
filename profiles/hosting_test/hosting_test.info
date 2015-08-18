@@ -41,6 +41,7 @@ dependencies[] = ct_event
 dependencies[] = view_latest_news
 dependencies[] = view_slider
 dependencies[] = homepage
+dependencies[] = view_latest_forum_comments
 
 files[] = hosting_test.profile
 files[] = hosting_test.install
