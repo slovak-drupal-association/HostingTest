@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the VIEW: Latest forum comments feature.
+ */
+
+include_once 'view_latest_forum_comments.features.inc';
