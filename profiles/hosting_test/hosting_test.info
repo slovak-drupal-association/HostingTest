@@ -32,6 +32,7 @@ dependencies[] = paragraphs
 dependencies[] = text
 dependencies[] = admin_menu
 dependencies[] = admin_menu_toolbar
+dependencies[] = module_filter
 
 ; Features
 dependencies[] = field_base
