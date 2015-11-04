@@ -26,6 +26,9 @@ echo "INFO: Installation done, performing clean up."
 drush ${1} cc all
 drush ${1} cc menu
 drush ${1} cron
+drush ${1} fra -y
+drush ${1} fra -y
+drush ${1} cc all
 
 install_end_time=`date +%s`
 
