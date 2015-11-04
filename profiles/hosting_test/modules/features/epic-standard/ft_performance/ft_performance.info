@@ -14,4 +14,5 @@ features[variable][] = page_cache_maximum_age
 features[variable][] = page_compression
 features[variable][] = preprocess_css
 features[variable][] = preprocess_js
+features[variable][] = redirect_page_cache
 project path = profiles/hosting_test/modules/features/epic-standard
