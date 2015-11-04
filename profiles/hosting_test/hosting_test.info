@@ -32,6 +32,8 @@ dependencies[] = paragraphs
 dependencies[] = text
 dependencies[] = admin_menu
 dependencies[] = admin_menu_toolbar
+dependencies[] = module_filter
+dependencies[] = admin_views
 
 ; Features
 dependencies[] = field_base
@@ -44,6 +46,9 @@ dependencies[] = homepage
 dependencies[] = view_event_page
 dependencies[] = view_latest_forum_comments
 dependencies[] = upcoming_events
+dependencies[] = ft_url_settings
+dependencies[] = ft_performance
+dependencies[] = ft_permissions
 
 files[] = hosting_test.profile
 files[] = hosting_test.install
