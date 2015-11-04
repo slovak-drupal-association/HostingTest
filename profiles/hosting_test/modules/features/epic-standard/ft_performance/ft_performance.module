@@ -1,5 +1,7 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the FT: Performance feature.
  */
+
+include_once 'ft_performance.features.inc';
