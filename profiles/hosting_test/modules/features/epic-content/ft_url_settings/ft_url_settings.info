@@ -1,0 +1,9 @@
+name = FT: URL Settings
+description = Various URL related settings, like Path-auto, redirects, etc.
+core = 7.x
+package = EPIC: Content
+version = 7.x-0.1
+project = ft_url_settings
+dependencies[] = pathauto
+features[features_api][] = api:2
+project path = profiles/hosting_test/modules/features/epic-content
