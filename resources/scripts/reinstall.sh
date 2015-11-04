@@ -16,10 +16,10 @@ install_start_time=`date +%s`
 if [ -z "$2" ]
 then
   echo "INFO: Starting installation."
-  drush ${1} si hosting_test -y
+  drush ${1} si hosting_test --site-name="Hosting test" --site-mail=info@drupal.sk -y
 else
   echo "INFO: Starting installation with provided DB credentials."
-  drush ${1} si hosting_test -y --db-url=${2}
+  drush ${1} si hosting_test --site-name="Hosting test" --site-mail=info@drupal.sk --db-url=${2} -y
 fi
 
 echo "INFO: Installation done, performing clean up."
