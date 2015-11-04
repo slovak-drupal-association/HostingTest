@@ -2,6 +2,7 @@ name = Hosting Test
 description = Installation profile for testing Slovak and Czech hostings.
 core = 7.x
 exclusive = TRUE
+version = 7.x-0.1
 
 ; Core modules
 dependencies[] = block
