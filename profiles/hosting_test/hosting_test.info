@@ -45,6 +45,7 @@ dependencies[] = view_event_page
 dependencies[] = view_latest_forum_comments
 dependencies[] = upcoming_events
 dependencies[] = ft_url_settings
+dependencies[] = ft_performance
 
 files[] = hosting_test.profile
 files[] = hosting_test.install

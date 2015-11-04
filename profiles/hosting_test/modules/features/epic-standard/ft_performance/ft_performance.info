@@ -1,0 +1,7 @@
+name = FT: Performance
+description = Performance settings.
+core = 7.x
+package = EPIC: Standard
+version = 7.x-0.1
+features[features_api][] = api:2
+project path = profiles/hosting_test/modules/features/epic-standard
