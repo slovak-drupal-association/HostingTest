@@ -169,6 +169,10 @@ function hosting_test_finished(&$install_state) {
   variable_set('admin_theme', 'seven');
   variable_set('node_admin_theme', '1');
 
+  // Rebuild permissions and clear cache.
+  node_access_rebuild();
+  drupal_flush_all_caches();
+
   // Check whether the script is running at the command line and if not
   // then redirect to the front page.
   if (!drupal_is_cli()) {
