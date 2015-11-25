@@ -28,14 +28,14 @@ function ft_performance_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'cache_lifetime';
-  $strongarm->value = '60';
+  $strongarm->value = '300';
   $export['cache_lifetime'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'page_cache_maximum_age';
-  $strongarm->value = '3600';
+  $strongarm->value = '21600';
   $export['page_cache_maximum_age'] = $strongarm;
 
   $strongarm = new stdClass();
