@@ -1,0 +1,181 @@
+<?php
+/**
+ * @file
+ * Installation profile for testing Slovak and Czech hosting providers.
+ *
+ * Designed and built by Slovak Drupal Association.
+ */
+
+/**
+ * Implements hook_install_tasks_alter().
+ *
+ * Sets up default settings for a new site using this profile.
+ */
+function hosting_test_install_tasks_alter(&$tasks, $install_state) {
+
+  // Set the default installation language to EN and skip the step.
+  global $install_state;
+  $tasks['install_select_locale']['display'] = FALSE;
+  $tasks['install_select_locale']['run'] = INSTALL_TASK_SKIP;
+  $install_state['parameters']['locale'] = 'sk';
+
+  // Remove install select profile step as this is an exclusive profile.
+  unset($tasks['install_select_profile']);
+
+  // Unset and save the configure form so that we can move it
+  // to the end of the task list.
+  $task = array('install_configure_form' => $tasks['install_configure_form']);
+  unset($tasks['install_configure_form']);
+
+  // Alter function used for last step.
+  $tasks['install_finished'] = array_merge($tasks['install_finished'], array('function' => 'hosting_test_finished'));
+
+  $task_keys = array_keys($tasks);
+  $last_task_key = end($task_keys);
+  $last_task = array_pop($tasks);
+
+  // Add the configure form.
+  $tasks = $tasks + $task;
+
+  // Add back the last task (install_finished).
+  $tasks[$last_task_key] = $last_task;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Allows the profile to alter the site configuration form.
+ *
+ * @inheritdoc
+ */
+function hosting_test_form_install_configure_form_alter(&$form, $form_state) {
+  // Since any module can add a drupal_set_message, this can bug the user
+  // when we display this page. For a better user experience,
+  // remove all the message that are only "notifications" message.
+  drupal_get_messages('status', TRUE);
+
+  // Hide the entire Server settings section - these settings are all dealt
+  // with by (standard) Site settings Feature.
+  $form['server_settings']['#access'] = FALSE;
+
+  // Default clean_url to ON.
+  $form['server_settings']['clean_url']['#default_value'] = 1;
+
+  // Set a default country.
+  $form['server_settings']['site_default_country']['#default_value'] = 'SK';
+
+  $form['admin_account']['account']['mail']['#default_value'] = 'info@drupal.sk';
+  $form['site_information']['site_mail']['#default_value'] = 'info@drupal.sk';
+  $form['site_information']['site_name']['#default_value'] = 'Hosting test';
+  $form['site_information']['site_slogan']['#default_value'] = '';
+
+  // Set the UID:1 user name and hide away the input.
+  $form['admin_account']['account']['name']['#default_value'] = 'admin';
+  $form['admin_account']['account']['name']['#type'] = 'hidden';
+
+  // Set the UID:1 password and hide away the input.
+  $form['admin_account']['account']['pass']['#value'] = 'admin';
+  $form['admin_account']['account']['pass']['#type'] = 'hidden';
+
+  $form['auto_submit'] = array(
+    '#type' => 'checkbox',
+    '#title' => st('Auto Submit'),
+    '#description' => st('<p id="auto-submit-description">This form will auto-submit in <span id="auto-submit-countdown">15</span> seconds</p>'),
+  );
+
+  $profile = $form_state['build_info']['args']['0']['parameters']['profile'];
+
+  $form['#attached']['js'] = array(
+    drupal_get_path('profile', $profile) . '/js/installerAutoSubmit.js',
+  );
+
+  // Add an extra submit handler to set up installation profile theme.
+  $form['#submit'][] = 'hosting_test_set_and_enable_themes';
+
+}
+
+/**
+ * Handles site installer's theme.
+ *
+ * @inheritdoc
+ */
+function hosting_test_set_and_enable_themes(&$form, $form_state) {
+
+  // Any themes without keys here will get numeric keys and so will be enabled,
+  // but not placed into variables.
+  $enable = array(
+    'zurb_foundation',
+    'hosting_theme',
+    'theme_default' => 'hosting_theme',
+    'admin_theme' => 'seven',
+  );
+
+  theme_enable($enable);
+
+  foreach ($enable as $var => $theme) {
+    if (!is_numeric($var)) {
+      variable_set($var, $theme);
+    }
+  }
+
+  // Disable the default Bartik theme.
+  theme_disable(array('bartik'));
+
+  // Restore the saved messages.
+  $saved_messages = variable_get('hosting_test_saved_messages', array());
+  if (!empty($saved_messages)) {
+    foreach ($saved_messages as $type => $messages) {
+      foreach ($messages as $message) {
+        drupal_set_message($message, $type);
+      }
+    }
+  }
+  variable_del('hosting_test_saved_messages');
+}
+
+/**
+ * Handles final steps of the site installer.
+ *
+ * @param string $install_state
+ *   State of the current installation.
+ */
+function hosting_test_finished(&$install_state) {
+  // Flush all caches to ensure that any full bootstraps during the installer
+  // do not leave stale cached data, and that any content types or other items
+  // registered by the installation profile are registered correctly.
+  drupal_flush_all_caches();
+
+  // Remember the profile which was used.
+  variable_set('install_profile', drupal_get_profile());
+
+  // Installation profiles are always loaded last.
+  db_update('system')
+    ->fields(array('weight' => 1000))
+    ->condition('type', 'module')
+    ->condition('name', drupal_get_profile())
+    ->execute();
+
+  // Cache a fully-built schema.
+  drupal_get_schema(NULL, TRUE);
+
+  // Run cron to populate update status tables (if available) so that users
+  // will be warned if they've installed an out of date Drupal version.
+  // This may also trigger indexing of profile-supplied content or feeds.
+  drupal_cron_run();
+
+  variable_set('install_task', 'done');
+  
+  // Enable the admin theme.
+  variable_set('admin_theme', 'seven');
+  variable_set('node_admin_theme', '1');
+
+  // Rebuild permissions and clear cache.
+  node_access_rebuild();
+  drupal_flush_all_caches();
+
+  // Check whether the script is running at the command line and if not
+  // then redirect to the front page.
+  if (!drupal_is_cli()) {
+    drupal_goto("");
+  }
+}

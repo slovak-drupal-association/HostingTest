@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the FT: Performance feature.
+ */
+
+include_once 'ft_performance.features.inc';

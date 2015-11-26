@@ -1,0 +1,16 @@
+name = VIEW: Event page
+core = 7.x
+package = EPIC: Events
+version = 7.x-1.1
+project = view_event_page
+dependencies[] = ct_event
+dependencies[] = gmap
+dependencies[] = views
+features[ctools][] = strongarm:strongarm:1
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[variable][] = gmap_default
+features[views_view][] = event_map
+features_exclude[dependencies][ctools] = ctools
+features_exclude[dependencies][strongarm] = strongarm
+project path = profiles/hosting_test/modules/features/epic-events

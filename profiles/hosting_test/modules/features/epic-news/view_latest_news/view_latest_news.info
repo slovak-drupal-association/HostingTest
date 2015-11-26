@@ -1,0 +1,13 @@
+name = VIEW: Latest News
+description = View of 10 latest News.
+core = 7.x
+package = EPIC: News
+version = 7.x-1.4
+project = view_latest_news
+dependencies[] = ct_news
+dependencies[] = ctools
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = latest_news
+project path = profiles/hosting_test/modules/features/epic-news

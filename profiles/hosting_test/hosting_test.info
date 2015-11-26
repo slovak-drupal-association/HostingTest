@@ -1,0 +1,54 @@
+name = Hosting Test
+description = Installation profile for testing Slovak and Czech hostings.
+core = 7.x
+exclusive = TRUE
+version = 7.x-0.1
+
+; Core modules
+dependencies[] = block
+dependencies[] = comment
+dependencies[] = contextual
+dependencies[] = image
+dependencies[] = menu
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = taxonomy
+dependencies[] = dblog
+dependencies[] = search
+dependencies[] = shortcut
+dependencies[] = field_ui
+dependencies[] = file
+dependencies[] = forum
+dependencies[] = rdf
+
+; Contribs
+dependencies[] = ctools
+dependencies[] = ds
+dependencies[] = entity
+dependencies[] = entityreference
+dependencies[] = features
+dependencies[] = paragraphs
+dependencies[] = text
+dependencies[] = admin_menu
+dependencies[] = admin_menu_toolbar
+dependencies[] = module_filter
+dependencies[] = admin_views
+
+; Features
+dependencies[] = field_base
+dependencies[] = ct_news
+dependencies[] = ct_article
+dependencies[] = ct_event
+dependencies[] = view_latest_news
+dependencies[] = view_slider
+dependencies[] = homepage
+dependencies[] = view_event_page
+dependencies[] = view_latest_forum_comments
+dependencies[] = upcoming_events
+dependencies[] = ft_url_settings
+dependencies[] = ft_performance
+dependencies[] = ft_permissions
+
+files[] = hosting_test.profile
+files[] = hosting_test.install
